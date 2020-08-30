@@ -1,0 +1,39 @@
+PROCEDURE Dot_procedure(a, b : ARRAY_OF INTEGER)
+VAR
+    p : INTEGER;
+BEGIN
+    p := a[0] * b[0] + a[1] * b[1];
+    IF (p = 0) THEN
+        Write("The two vectors are orthogonal");
+    ELSE
+        Write("The two vectors aren't orthogonal");
+    END_IF
+END
+
+ALGORITHM Dot
+VAR
+    n : INTEGER;
+    j : INTEGER := 1;
+    tab, arr : ARRAY_OF INTEGER [2];
+BEGIN
+    Write("Give the number of pairs vectors that you want to check");
+    Read(n);
+    REPEAT
+        Write("Give the first component of V1")
+        Read(tab[0]);
+        
+        Write("Give the second component of V1")
+        Read(tab[1]);
+
+        Write("Give the first component of V2")
+        Read(arr[0]);
+
+        Write("Give the second component of V2")
+        Read(arr[1]);
+
+        Dot_procedure(tab, arr)
+
+        j := j + 1;
+
+    UNTIL (j > n)
+END
